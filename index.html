@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Modified Carousel</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+	<style>
+		#red{
+			background-color: red;
+			width: 250px;
+		}
+		#container
+		{
+		  width: 145px;
+		  height: 25px;
+		  border: 1px solid #ccc;
+		  overflow-x: scroll;
+		  /* Hide scrollbar for IE, Edge and Firefox */
+		  ms-overflow-style: none;  /* IE and Edge */
+		  scrollbar-width: none;  /* Firefox */
+		}
+		
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		#container::-webkit-scrollbar {
+			display: none;
+		}
+		
+		#carouselOuter{
+		  width: 145px;
+		  height: 25px;
+		}
+		
+	</style>
+	
+	<!-- Carousel -->
+	<div id="carouselOuter" class="carousel slide">
+	
+		<!-- container that scrolls -->
+	 	<div id="container">
+	  		<!-- content -->
+	  		<div id="red">Click the buttons to slide horizontally!</div>
+	 	</div> 
+	
+	  	<!-- Left and right controls/icons: they must be in the carousel in order to show up -->
+	  	<button id="slideLeft" class="carousel-control-prev" type="button" >
+			<span class="carousel-control-prev-icon"></span>
+	  	</button>
+	  	<button id="slideRight" class="carousel-control-next" type="button" >
+			<span class="carousel-control-next-icon"></span>
+	  	</button>
+		
+	</div>
+	
+	
+	
+	<script>
+		const buttonRight = document.getElementById('slideRight');
+		const buttonLeft = document.getElementById('slideLeft');
+	
+		buttonRight.onclick = function () {
+		  document.getElementById('container').scrollLeft += 20;
+		};
+		buttonLeft.onclick = function () {
+		  document.getElementById('container').scrollLeft -= 20;
+		};
+	</script>
+
+</body>
+</html>
